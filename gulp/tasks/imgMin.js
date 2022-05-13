@@ -1,9 +1,9 @@
 const gulp = require('gulp');
-const imagemin = require('gulp-imagemin');
+// const imagemin = require('gulp-imagemin');
 
 module.exports = function imgMin() {
-  return gulp.src('src/img/*.{gif,png,jpg,svg,webp}', base('/src'))
-            /* .pipe(imagemin([
+ /* return gulp.src('src/img/!*.{gif,png,jpg,svg,webp}')
+             /!*.pipe(imagemin([
                               imagemin.gifsicle({interlaced: true}),
                               imagemin.mozjpeg({
                                                  quality: 75,
@@ -16,6 +16,8 @@ module.exports = function imgMin() {
                                                 {cleanupIDs: false}
                                               ]
                                             })
-                            ]))*/
-             .pipe(gulp.dest('build'));
+                            ]))*!/
+             .pipe(gulp.dest('build'));*/
+  return gulp.src('src/img/*.png')
+             .pipe(gulp.dest('build/icons/'));
 };
